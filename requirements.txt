@@ -1,0 +1,8 @@
+Pillow
+pygame
+opencv-python
+numpy
+mediapipe
+RPi.GPIO
+fastapi
+uvicorn
