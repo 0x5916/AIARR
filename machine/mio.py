@@ -3,12 +3,14 @@ import RPi.GPIO as GPIO
 
 cpr_press = 26  # cpr 
 cpr_press_low = 20
-air_pump = 3
-air_pump_low = 19
+# air_pump = 3
+# air_pump_low = 19
+air_pump = 23
+air_pump_low = 22
 cpr_up = 16
 cpr_down = 21
-cam_up = 22
-cam_down = 23
+# cam_up = 22
+# cam_down = 23
 press_trigger = 2  # input
 
 def setup():
@@ -19,8 +21,8 @@ def setup():
     GPIO.setup(air_pump_low, GPIO.OUT)
     GPIO.setup(cpr_up, GPIO.OUT)
     GPIO.setup(cpr_down, GPIO.OUT)
-    GPIO.setup(cam_up, GPIO.OUT)
-    GPIO.setup(cam_down, GPIO.OUT)
+    # GPIO.setup(cam_up, GPIO.OUT)
+    # GPIO.setup(cam_down, GPIO.OUT)
     GPIO.setup(press_trigger, GPIO.IN)
 
 def reset():
@@ -32,8 +34,8 @@ def reset():
     GPIO.output(cpr_press_low, GPIO.LOW)
     GPIO.output(cpr_up, GPIO.HIGH)
     GPIO.output(cpr_down, GPIO.LOW)
-    GPIO.output(cam_up, GPIO.LOW)
-    GPIO.output(cam_down, GPIO.HIGH)
+    # GPIO.output(cam_up, GPIO.LOW)
+    # GPIO.output(cam_down, GPIO.HIGH)
 
 def setup_gpio():
     setup()
@@ -48,6 +50,7 @@ cam_dict = {
 }
 
 def cam_go(side: Literal["left", "right", "stop"]):
+    return None
     GPIO.output(cam_up, cam_dict[side][0])
     GPIO.output(cam_down, cam_dict[side][1])
 
