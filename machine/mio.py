@@ -5,8 +5,8 @@ cpr_press = 26  # cpr
 cpr_press_low = 20
 # air_pump = 3
 # air_pump_low = 19
-air_pump = 23
-air_pump_low = 22
+air_pump = 22
+air_pump_low = 23
 cpr_up = 16
 cpr_down = 21
 # cam_up = 22
@@ -50,7 +50,7 @@ cam_dict = {
 }
 
 def cam_go(side: Literal["left", "right", "stop"]):
-    return None
+    return
     GPIO.output(cam_up, cam_dict[side][0])
     GPIO.output(cam_down, cam_dict[side][1])
 
